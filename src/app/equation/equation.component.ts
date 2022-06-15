@@ -9,7 +9,7 @@ import { MathValidators } from '../math-validators';
   styleUrls: ['./equation.component.scss']
 })
 export class EquationComponent implements OnInit {
-
+  secondPerSolution = 0;
   mathform = new FormGroup({
     a: new FormControl(this.randomNumber()),
     b: new FormControl(this.randomNumber()),
@@ -26,12 +26,20 @@ export class EquationComponent implements OnInit {
   get answer() { return this.mathform.value.answer; }
 
   ngOnInit(): void {
+    const startTime = new Date();
+    let numberSolved = 0;
+
     this.mathform.statusChanges
       .pipe(
         filter(value => value === "VALID"),
         delay(1000)
       )
     .subscribe((value)=>{
+      numberSolved++;
+      this.secondPerSolution = (
+        new Date().getTime() - startTime.getTime()
+      ) / numberSolved / 1000;
+
         this.mathform.setValue({
           a: this.randomNumber(),
           b: this.randomNumber(),
