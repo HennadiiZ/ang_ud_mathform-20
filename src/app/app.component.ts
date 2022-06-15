@@ -18,6 +18,7 @@ export class AppComponent {
   // 259. Making Validators Reusable
   // 260. RxJs with Reactive Forms
   // 261. Handling Correct Answers
+  // 262. The Delay Operator
   // 
 
 }
