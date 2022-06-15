@@ -10,5 +10,8 @@ export class AppComponent {
 
   // Section 20: Build a Fast-Paced Math Game
   // 253. App Overview
-  
+  // 254. App Setup
+  // 255. Possible Design Approaches
+  // 256. Displaying Form Values
+
 }
