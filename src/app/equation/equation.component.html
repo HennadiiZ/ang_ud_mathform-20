@@ -1,6 +1,7 @@
 <form [formGroup]="mathform">
    {{ a }} + {{ b }} =
-   <input formControlName="answer">
+   <!-- <input [ngClass]="{ highlight: (a+b) * .8 > answer}" formControlName="answer"> -->
+   <input appAnswerHighLight formControlName="answer">
 </form>
 {{ secondPerSolution | number: '1.1-3'}}
 <hr>
