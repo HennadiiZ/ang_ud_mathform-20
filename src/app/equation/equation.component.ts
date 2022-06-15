@@ -39,7 +39,24 @@ export class EquationComponent implements OnInit {
   ngOnInit(): void {
     // console.log("+++", this.mathform.statusChanges);
     this.mathform.statusChanges.subscribe((value)=>{
-      console.log("+++", value);
+      if(value === "INVALID"){
+        return;
+      }
+      // this.mathform.controls['a'].setValue(this.randomNumber());
+      // this.mathform.controls['b'].setValue(this.randomNumber());
+      // this.mathform.controls['answer'].setValue('');
+
+      this.mathform.setValue({
+        a: this.randomNumber(),
+        b: this.randomNumber(),
+        answer: ''
+      });
+
+      // this.mathform.patchValue({
+      //   a: this.randomNumber(),
+      //   b: this.randomNumber(),
+      //   answer: ''
+      // });
     });
   }
 
