@@ -24,5 +24,6 @@ export class AppComponent {
   // 265. A Touch of Styling
   // 266. Helping the User Along
   // 267. Accessing FormGroups from Custom Directives
-
+  // 268. Detecting Changes
+  // 269. Applying a Class Name
 }
