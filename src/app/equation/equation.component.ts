@@ -17,18 +17,6 @@ export class EquationComponent implements OnInit {
   },[
     MathValidators.addition('answer', 'a', 'b'),
     Validators.required
-    // (form: AbstractControl)=>{
-    //   // return null
-    //   // console.log(form.value);
-    //   // return { addition: true};
-
-    //   // if(form.value.a + form.value.b === parseInt(form.value.answer)){}
-    //   // const { a, b, answer } = form.value;
-    //   // if(a + b === parseInt(answer)){
-    //   //   return null;
-    //   // }
-    //   // return { addition: true};
-    // }
   ]);
 
   constructor() { }
@@ -38,31 +26,17 @@ export class EquationComponent implements OnInit {
   get answer() { return this.mathform.value.answer; }
 
   ngOnInit(): void {
-    // console.log("+++", this.mathform.statusChanges);
     this.mathform.statusChanges
-    .pipe(
-      filter(value => value === "VALID"),
-      delay(1000)
-    )
+      .pipe(
+        filter(value => value === "VALID"),
+        delay(1000)
+      )
     .subscribe((value)=>{
-      // if(value === "INVALID"){
-      //   return;
-      // }
-      // this.mathform.controls['a'].setValue(this.randomNumber());
-      // this.mathform.controls['b'].setValue(this.randomNumber());
-      // this.mathform.controls['answer'].setValue('');
-
-      this.mathform.setValue({
-        a: this.randomNumber(),
-        b: this.randomNumber(),
-        answer: ''
-      });
-
-      // this.mathform.patchValue({
-      //   a: this.randomNumber(),
-      //   b: this.randomNumber(),
-      //   answer: ''
-      // });
+        this.mathform.setValue({
+          a: this.randomNumber(),
+          b: this.randomNumber(),
+          answer: ''
+        });
     });
   }
 
