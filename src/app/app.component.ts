@@ -14,5 +14,6 @@ export class AppComponent {
   // 255. Possible Design Approaches
   // 256. Displaying Form Values
   // 257. Adding Custom Validation
-  //
+  // 258. Extracting Custom Validation Logic
+  
 }
