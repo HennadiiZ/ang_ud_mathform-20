@@ -37,6 +37,10 @@ export class EquationComponent implements OnInit {
   get answer() { return this.mathform.value.answer; }
 
   ngOnInit(): void {
+    // console.log("+++", this.mathform.statusChanges);
+    this.mathform.statusChanges.subscribe((value)=>{
+      console.log("+++", value);
+    });
   }
 
   randomNumber(){
